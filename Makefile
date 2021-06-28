@@ -1,6 +1,7 @@
 EXE = explosion
 
 SRC_PATH = ./src/*.cpp
+MAIN_FILE_NAME = main.cpp
 
 CC = g++
 COMPILER_FLAGS = -subsystem,windows
@@ -20,7 +21,7 @@ build:
 	$(CC) \
 	$(COMPILER_FLAGS) \
 	$(DBG_FLAG) \
-	$(SRC_PATH) \
+	$(MAIN_FILE_NAME) \
 	$(SDL2_INCLUDE_PATH) \
 	$(SDL2_LIBS_PATH) \
 	$(SDL2_LINKER_FLAGS) \
