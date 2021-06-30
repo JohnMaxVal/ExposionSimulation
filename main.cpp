@@ -32,6 +32,7 @@ int main(int argc, char *argv[]) {
         unsigned char blue = (unsigned char)((1 + sin(elapsed * 0.003)) * 128);
 
         const Particle * const pParticles = swarm.getParticles();
+        
         for(int i = 0; i < Swarm::NPARTICLES; i++) {
             Particle particle = pParticles[i];
 
