@@ -24,6 +24,10 @@ int main(int argc, char *argv[]) {
     while(true) {
 
         int elapsed = SDL_GetTicks();
+
+        screen.clear();
+        swarm.update(elapsed);
+
         unsigned char red = (unsigned char)((1 + sin(elapsed * 0.001)) * 128);
         unsigned char green = (unsigned char)((1 + sin(elapsed * 0.002)) * 128);
         unsigned char blue = (unsigned char)((1 + sin(elapsed * 0.003)) * 128);
@@ -33,7 +37,7 @@ int main(int argc, char *argv[]) {
             Particle particle = pParticles[i];
 
             int p_X = (particle.m_x + 1) * Screen::SCREEN_WIDTH / 2;
-            int p_Y = (particle.m_y + 1) * Screen::SCREEN_HEIGHT / 2;
+            int p_Y = particle.m_y * Screen::SCREEN_WIDTH / 2 + Screen::SCREEN_HEIGHT / 2;
 
             screen.setPixel(p_X, p_Y, red, green, blue);
         }

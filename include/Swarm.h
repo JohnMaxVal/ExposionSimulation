@@ -11,10 +11,12 @@ public:
 
 private:
     Particle * m_Particles;
+    int lastTime;
 
 public:
     Swarm();
     virtual ~Swarm();
+    void update(int elapsed);
 
     const Particle * const getParticles() { return m_Particles; }
 };
